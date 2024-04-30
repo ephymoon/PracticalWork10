@@ -26,7 +26,7 @@ namespace _1
             room.purpose = Console.ReadLine();
             Console.Write("Демонстрация метода ToString: " + room.ToString());
             Room room2 = new Room(room);
-            Room room3 = new Room(room2);
+            Room room3 = new Room();
             Room[] xd = new Room[3];
             xd[0] = room;
             xd[1] = room2;
@@ -40,7 +40,7 @@ namespace _1
             flat.floor = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nДемонстрация метода ToString: " + flat.ToString());
             Flat flat2 = new Flat(flat);
-            Flat flat3 = new Flat(flat2);
+            Flat flat3 = new Flat();
             Flat[] xd2 = new Flat[3];
             xd2[0] = flat;
             xd2[1] = flat2;
