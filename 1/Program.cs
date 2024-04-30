@@ -42,16 +42,16 @@ namespace _1
 
      public class Flat
     {
-        public int[] room_array;
+        public Room[] room_array;
         public int apt_room;
         public int floor;
         public Flat() 
         {
-            room_array = new int[10];
+            room_array = new Room[3];
             apt_room = 1;
             floor = 1;
         }
-        public Flat(int[] room_array, int apt_room, int floor)
+        public Flat(Room[] room_array, int apt_room, int floor)
         {
             this.room_array = room_array;
             this.apt_room = apt_room;
@@ -71,16 +71,16 @@ namespace _1
 
     public class Building
     {
-        public int[] apt_array;
+        public Flat[] apt_array;
         public int floors;
         public string address;
         public Building()
         {
-            apt_array = new int[10];
+            apt_array = new Flat[3];
             floors = 5;
             address = "ул. Пушкина 52";
         }
-        public Building(int[] apt_array, int floors, string address)
+        public Building(Flat[] apt_array, int floors, string address)
         {
             this.apt_array = apt_array;
             this.floors = floors;
@@ -106,7 +106,7 @@ namespace _1
             Room room = new Room();
             Flat flat = new Flat();
             Building build = new Building();
-                // class Room
+            // class Room
             Console.Write("Класс комнат.\nДлина комнаты: ");
             room.lenght = Convert.ToInt32(Console.ReadLine());
             Console.Write("Ширина комнаты: ");
@@ -116,19 +116,29 @@ namespace _1
             Console.Write("Назначение комнаты: ");
             room.purpose = Console.ReadLine();
             Console.Write("Демонстрация метода ToString: " + room.ToString());
-                // class Flat
-            Console.Write("\n\nКласс Квартир.\nРазмерность массива комнат: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            flat.room_array = new int[n];
+            Room room2 = new Room(room);
+            Room room3 = new Room(room2);
+            Room[] xd = new Room[3];
+            xd[0] = room;
+            xd[1] = room2;
+            xd[2] = room3;
+            // class Flat
+            flat.room_array = xd;
+            Console.Write("\n\nКласс Квартир.\n");
             Console.Write("Номер квартиры: ");
             flat.apt_room = Convert.ToInt32(Console.ReadLine());
             Console.Write("Этаж: ");
             flat.floor = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nДемонстрация метода ToString: " + flat.ToString());
-                // class build
-            Console.Write("\n\nКласс Зданий.\nРазмерность массива квартир: ");
-            n = Convert.ToInt32(Console.ReadLine());
-            build.apt_array = new int[n];
+            Flat flat2 = new Flat(flat);
+            Flat flat3 = new Flat(flat2);
+            Flat[] xd2 = new Flat[3];
+            xd2[0] = flat;
+            xd2[1] = flat2;
+            xd2[2] = flat3;
+            build.apt_array = xd2;
+            // class build
+            Console.Write("\n\nКласс Зданий.\n");
             Console.Write("Количество этажей: ");
             build.floors = Convert.ToInt32(Console.ReadLine());
             Console.Write("Адрес: ");
