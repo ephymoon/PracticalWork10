@@ -11,6 +11,7 @@ namespace _2
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Программа работы с координатной плоскостью и точкой на ней.");
             Point point = new Point();
             Console.Write("Введите x: ");
             point.x = Convert.ToInt32(Console.ReadLine());
